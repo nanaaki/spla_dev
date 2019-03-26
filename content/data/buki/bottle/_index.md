@@ -1,6 +1,4 @@
 +++
-title = "各種データ"
+title = "ボトルガイザー"
 description = "splatoon2"
 +++
-
-aaa

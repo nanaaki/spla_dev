@@ -1,6 +1,4 @@
 +++
-title = "各種データ"
+title = "リールガン系"
 description = "splatoon2"
 +++
-
-aaa
