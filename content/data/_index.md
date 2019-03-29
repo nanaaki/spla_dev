@@ -1,6 +1,0 @@
-+++
-title = "各種データ"
-description = "splatoon2"
-+++
-
-aaa

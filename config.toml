@@ -1,14 +1,14 @@
 baseURL = "/"
 
-languageCode = "en-us"
-DefaultContentLanguage = "en"
-title = "DocDock Documentation"
+languageCode = "ja-JP"
+DefaultContentLanguage = "ja"
+title = "スプラトゥーン2 のデータまとめ"
 theme = "docdock"
 #themesdir = "../.."
 pygmentsCodeFences = true
 pygmentsStyle = "monokailight"
 
-defaultContentLanguage = "en"
+defaultContentLanguage = "ja"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
@@ -24,13 +24,10 @@ enableMissingTranslationPlaceholders = false
 # weight = 2
 # languageName = "Français"
 
-
-
-
 [params]
 showVisitedLinks = true # default is false
-themeStyle = "flex" # "original" or "flex" # default "flex"
-themeVariant = "green" # choose theme variant "green", "gold" , "gray", "blue" (default)
+themeStyle = "original" # "original" or "flex" # default "flex"
+themeVariant = "gray" # choose theme variant "green", "gold" , "gray", "blue" (default)
 ordersectionsby = "weight" # ordersectionsby = "title"
 disableHomeIcon = false # default is false
 disableSearch = false # default is false
