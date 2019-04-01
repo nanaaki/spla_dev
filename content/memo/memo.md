@@ -1,5 +1,5 @@
 ---
-title: "ギアパワー全般知識"
+title: "place holder"
 date: 2019-03-19T00:41:14+09:00
 draft: flase
 ---

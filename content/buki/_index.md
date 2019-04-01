@@ -1,7 +1,8 @@
 +++
-title = "ブキ"
+title = "ブキ(工事中)"
 description = "splatoon2"
 weight = 20
+alwaysopen = true
 +++
 
 ブキ一覧
