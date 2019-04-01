@@ -3,6 +3,7 @@ baseURL = "https://ika.ninja"
 languageCode = "ja-JP"
 DefaultContentLanguage = "ja"
 title = "スプラトゥーン2 のデータまとめ"
+googleAnalytics = "UA-137344319-1"
 theme = "docdock"
 #themesdir = "../.."
 pygmentsCodeFences = true
