@@ -33,8 +33,7 @@ weght: 10
 
 <iframe width="800" height="450" src="https://datastudio.google.com/embed/reporting/14V2ptJLY-QAE-PObM2r7bVPh0OkdzAU2/page/idOl" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-全部をまとめると以下の通りになる。
+現状データとか集まってるグラフ化できている値は以下のグラフが全て。左上の武器名で絞り込みから好きなブキに絞り込んで確認可能。(一覧に無いブキは今後がんばって追加します・・・。
 
 <iframe width="800" height="450" src="https://datastudio.google.com/embed/reporting/14V2ptJLY-QAE-PObM2r7bVPh0OkdzAU2/page/M7Ol" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-ブキ名で絞り込みから比較したいブキのみを選んで比較できるので使ってください。
