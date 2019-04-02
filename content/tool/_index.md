@@ -1,7 +1,8 @@
 +++
 title = "ツール"
 description = "splatoon2"
-weight=110
+weight=9
+alwaysopen = true
 +++
 
 ## ツール類
