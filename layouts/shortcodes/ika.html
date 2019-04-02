@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<div>
+
 
 <head>
   <title>スプラトゥーン2ギア計算機 v0.0.5.9</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/ika/vue.js"></script>
-  <style lang="css" scoped>
-    @import url('/ika/ika.css');
-  </style>
-  <style lang="css" scoped>
-    @import url('/ika/bulma.min.css');
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() { //🍔
       var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -30,136 +24,120 @@
 
 </head>
 
-<div id="app" :style="styles">
+  <style lang="css">
+    @import url('/ika/bulma_ika.css');
+    @import url('/ika/ika_ika.css');
+  </style>
+<div id="app" :style="styles" class="ika_css app">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:url" :content=exportEqui />
   <meta name="twitter:title" content="スプラトゥーン2ギアパワー計算機" />
   <meta name="twitter:description" :content=exportGps />
   <meta name="twitter:image" :content=exportTweetCard />
-  <div class="container">
+  <div class="ika container">
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="https://nanaaki.com/ika">
+    <nav class="ika navbar" role="navigation" aria-label="main navigation">
+      <div class="ika navbar-brand">
+        <a class="ika navbar-item" href="https://ika.ninja/tool/calc">
           <img src="/ika/img/F.png">
-          ギアパワー計算機 [[ version ]]
+          ギアパワー計算機 [[version]]
         </a>
-
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item">
-            <s>使い方</s>
-          </a>
-        </div>
-
-        <div class="navbar-end">
-          <a class="navbar-item" href="https://nanaaki.com/post/2019/2/splatooncalc/">
-            about
-          </a>
-        </div>
       </div>
     </nav>
 
-    <div class="is-desktop" style="padding-top:10px;">
+    <div class="ika is-desktop" style="padding-top:10px;">
 
-      <div class="tile is-ancestor is-desktop">
-        <div class="tile is-3 is-vertical is-parent">
-          <div class="tile is-12 is-child box">
-            <p class="subtitle">ギア</p>
+      <div class="ika tile is-ancestor is-desktop">
+        <div class="ika tile is-3 is-vertical is-parent">
+          <div class="ika tile is-12 is-child box">
+            <p class="ika subtitle">ギア</p>
             <div><label for=copy_data><button v-on:click=copy_url>Copy</button>:</label><input id="copy_data" :value=exportEqui></div>
-            <div class=twitter_box><a :href=exportTweet class="twitter" target="_blank">Tweet</a></div>
-            <div class="equi_box">
+            <div class=twitter_box><a :href=exportTweet class="ika twitter" target="_blank">Tweet</a></div>
+            <div class="ika equi_box">
               <ul>
                 <li><div style="position:relative;float:left;">頭</div></li>
                 <li>
-                  <div class="select-wrap select-circle-main" v-bind:style="{ 'background-image': 'url(' + equi.head.main.image + ')', 'background-repeat': 'no-repeat'}">
+                  <div class="ika select-wrap select-circle-main" v-bind:style="{ 'background-image': 'url(' + equi.head.main.image + ')', 'background-repeat': 'no-repeat'}">
                       <select v-model="equi.head.main">
-                        <option v-for="option in gear" v-bind:value="option">[[  option.name  ]]</option>
+                        <option v-for="option in gear" v-bind:value="option">[[option.name ]]</option>
                       </select>
                   </div>
                 </li>
                 <li v-for="(item,index) in equi.head.sub">
-                    <div class="select-wrap select-circle" v-bind:style="{ 'background-image': 'url(' + item.image + ')', 'background-repeat': 'no-repeat', 'background-size':'32px 32px', 'background-position':'left bottom'}">
+                    <div class="ika select-wrap select-circle" v-bind:style="{ 'background-image': 'url(' + item.image + ')', 'background-repeat': 'no-repeat', 'background-size':'32px 32px', 'background-position':'left bottom'}">
                       <select v-model="equi.head.sub[index]">
-                        <option v-for="option in gear" v-bind:value="option">[[ option.name ]]</option>
+                        <option v-for="option in gear" v-bind:value="option">[[option.name]]</option>
                       </select>
                     </div>
                 </li>
               </ul>
             </div>
 
-            <div class="equi_box">
+            <div class="ika equi_box">
               <ul>
                 <li><div style="position:relative;float:left;">服</div></li>
                 <li>
-                    <div class="select-wrap select-circle-main" v-bind:style="{ 'background-image': 'url(' + equi.body.main.image + ')', 'background-repeat': 'no-repeat'}">
+                    <div class="ika select-wrap select-circle-main" v-bind:style="{ 'background-image': 'url(' + equi.body.main.image + ')', 'background-repeat': 'no-repeat'}">
                       <select v-model="equi.body.main">
-                        <option v-for="option in gear" v-bind:value="option">[[ option.name ]]</option>
+                        <option v-for="option in gear" v-bind:value="option">[[option.name]]</option>
                       </select>
                     </div>
                 </li>
                 <li v-for="(item,index) in equi.body.sub">
-                    <div class="select-wrap select-circle" v-bind:style="{ 'background-image': 'url(' + item.image + ')', 'background-repeat': 'no-repeat', 'background-size':'32px 32px', 'background-position':'left bottom'}">
+                    <div class="ika select-wrap select-circle" v-bind:style="{ 'background-image': 'url(' + item.image + ')', 'background-repeat': 'no-repeat', 'background-size':'32px 32px', 'background-position':'left bottom'}">
                       <select v-model="equi.body.sub[index]">
-                        <option v-for="option in gear" v-bind:value="option">[[ option.name ]]</option>
+                        <option v-for="option in gear" v-bind:value="option">[[option.name]]</option>
                       </select>
                     </div>
                 </li>
               </ul>
             </div>
 
-            <div class="equi_box">
+            <div class="ika equi_box">
               <ul>
                 <li><div style="position:relative;float:left;">靴</div></li>
                 <li>
-                      <div class="select-wrap select-circle-main" v-bind:style="{ 'background-image': 'url(' + equi.leg.main.image + ')', 'background-repeat': 'no-repeat'}">
+                      <div class="ika select-wrap select-circle-main" v-bind:style="{ 'background-image': 'url(' + equi.leg.main.image + ')', 'background-repeat': 'no-repeat'}">
                         <select v-model="equi.leg.main">
-                          <option v-for="option in gear" v-bind:value="option">[[ option.name ]]</option>
+                          <option v-for="option in gear" v-bind:value="option">[[option.name]]</option>
                         </select>
                       </div>
                   </li>
                 <li v-for="(item,index) in equi.leg.sub">
-                    <div class="select-wrap select-circle" v-bind:style="{ 'background-image': 'url(' + item.image + ')', 'background-repeat': 'no-repeat', 'background-size':'32px 32px', 'background-position':'left bottom'}">
+                    <div class="ika select-wrap select-circle" v-bind:style="{ 'background-image': 'url(' + item.image + ')', 'background-repeat': 'no-repeat', 'background-size':'32px 32px', 'background-position':'left bottom'}">
                       <select v-model="equi.leg.sub[index]">
-                        <option v-for="option in gear" v-bind:value="option">[[ option.name ]]</option>
+                        <option v-for="option in gear" v-bind:value="option">[[option.name]]</option>
                       </select>
                     </div>
                 </li>
               </ul>
             </div>
 
-            <div class="equi_box">
+            <div class="ika equi_box">
               <ul>
                 <li><div style="position:relative;float:left;">ブキ:</div></li>
                 <li>
                 <select v-model="buki">
-                    <option v-for="buki in buki_list" v-bind:value="buki">[[ buki.name ]]</option>
+                    <option v-for="buki in buki_list" v-bind:value="buki">[[buki.name]]</option>
                 </select>
                 </li>
               </ul>
             </div>
 
             <div v-if="boost.name!=''">
-              <button v-if="boost.on" v-on:click="boost.on=false">[[ boost.name ]]有効</button>
-              <button v-else v-on:click="boost.on=true">[[ boost.name ]]無効</button>
+              <button v-if="boost.on" v-on:click="boost.on=false">[[boost.name]]有効</button>
+              <button v-else v-on:click="boost.on=true">[[boost.name]]無効</button>
             </div>
           </div>
-          <div class="tile is-12 is-child box">
-            <p class="subtitle">ギアパワー振り分け/ブキスペック</p>
+          <div class="ika tile is-12 is-child box">
+            <p class="ika subtitle">ギアパワー振り分け/ブキスペック</p>
             <div>
-              <ul><li v-for="dg in view_spec(buki, gps['4'] ? gps['4'] : 0)">[[ dg ]]</li>
+              <ul><li v-for="dg in view_spec(buki, gps['4'] ? gps['4'] : 0)">[[dg]]</li>
             </div>
             <div>
               <ul>
                 <li v-for="(val, key) in gps">
-                  <img :src="getGear(key).image" width="16px" height="16px" />[[ getGear(key).name ]] - [[ val ]]
+                  <p><img :src="getGear(key).image" width="16px" height="16px" />[[getGear(key).name]] - [[val]]</p>
                 </li>
               </ul>
             </div>
@@ -167,99 +145,99 @@
           </div>
         </div>
 
-        <div class="tile is-vertical is-parent">
-          <div class="tile box is-12 is-child">
+        <div class="ika tile is-vertical is-parent">
+          <div class="ika tile box is-12 is-child">
             <p>移動速度系(試し打ちライン4本分)</p>
-            <div>ヒト状態速度[[ getFloor((50/getStatus("5").middle)/60)+"秒" ]]
-              <div class=base_move_border>
-                <div class="move_hito"></div>
+            <div>ヒト状態速度[[getFloor((50/getStatus("5").middle)/60)+"秒"]]
+              <div class="ika base_move_border">
+                <div class="ika move_hito"></div>
               </div>
             </div>
-            <div>イカ状態速度[[ getFloor((50/getStatus("6").middle)/60)+"秒" ]]
-              <div class=base_move_border>
-                <div class="move_ika"></div>
+            <div>イカ状態速度[[getFloor((50/getStatus("6").middle)/60)+"秒"]]
+              <div class="ika base_move_border">
+                <div class="ika move_ika"></div>
               </div>
             </div>
-            <div>相手インク上 ヒト速度[[ getFloor((50/getStatus("D").hito)/60)+"秒" ]]
-              <div class=base_move_border>
-                <div class="move_aite"></div>
+            <div>相手インク上 ヒト速度[[getFloor((50/getStatus("D").hito)/60)+"秒"]]
+              <div class="ika base_move_border">
+                <div class="ika move_aite"></div>
               </div>
             </div>
           </div>
-          <div class="tile box is-12 is-child">
-            <div>復活時間:[[ getFloor(getStatus("A")/60) ]]秒<div class=base_move>
+          <div class="ika tile box is-12 is-child">
+            <div>復活時間:[[getFloor(getStatus("A")/60)]]秒<div class=base_move>
                 <div class=respone></div>
               </div>
-              <div>スパジャン短縮 待機:[[ getFloor(getStatus("B").wait/60) ]] + 滞空:[[ getFloor(getStatus("B").jump/60) ]]秒<div class=base_jump_border>
+              <div>スパジャン短縮 待機:[[getFloor(getStatus("B").wait/60)]] + 滞空:[[getFloor(getStatus("B").jump/60)]]秒<div class=base_jump_border>
                   <div class=jump_count></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tile box is-12 is-child">
-            <div>インク回復速度 イカ [[ getStatus("3").ika ]]f, [[ getFloor(getStatus("3").ika/60) ]]秒<div class="base">
-                <div class="main_ink_ika"></div>
+          <div class="ika tile box is-12 is-child">
+            <div>インク回復速度 イカ [[getStatus("3").ika]]f, [[getFloor(getStatus("3").ika/60)]]秒<div class="ika base">
+                <div class="ika main_ink_ika"></div>
               </div>
             </div>
-            <div>インク回復速度 ヒト [[ getStatus("3").hito ]]f,[[ getFloor(getStatus("3").hito/60) ]]秒<div class="base">
-                <div class="main_ink_hito"></div>
+            <div>インク回復速度 ヒト [[getStatus("3").hito]]f,[[getFloor(getStatus("3").hito/60)]]秒<div class="ika base">
+                <div class="ika main_ink_hito"></div>
               </div>
             </div>
           </div>
-          <div class="tile box is-12 is-child">
+          <div class="ika tile box is-12 is-child">
             <div>相手インク軽減 スリップダメージ
               <ul>
-                <li>最大ダメージ量 : [[ getFloor(getStatus("D").cap) ]]</li>
-                <li>秒間ダメージ : [[ getStatus("D").slip*60 ]]ダメージ</li>
-                <li>無敵フレーム数 : [[ getFloor(getStatus("D").no_damage) ]]フレーム</li>
-                <li>最大ダメージ到達時間 : [[ getFloor((getStatus("D").cap/getStatus("D").slip)/60-getStatus("D").no_damage/60) ]]秒</li>
+                <li>最大ダメージ量 : [[getFloor(getStatus("D").cap)]]</li>
+                <li>秒間ダメージ : [[getStatus("D").slip*60]]ダメージ</li>
+                <li>無敵フレーム数 : [[getFloor(getStatus("D").no_damage)]]フレーム</li>
+                <li>最大ダメージ到達時間 : [[getFloor((getStatus("D").cap/getStatus("D").slip)/60-getStatus("D").no_damage/60)]]秒</li>
               </ul>
-              <div class="base">
-                <div class="aite_ink">
-                  <div class="aite_ink_slip"></div>
+              <div class="ika base">
+                <div class="ika aite_ink">
+                  <div class="ika aite_ink_slip"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tile box is-12 is-child">
+          <div class="ika tile box is-12 is-child">
             <div>爆風ダメージ軽減</div>
             　<ul>
-              　<li>ジェットパック 近/遠:[[ getFloor(50*(1-getStatus("E").special)) ]]/[[ getFloor(30*(1-getStatus("E").special)) ]]</li>
-              　<li>クイックボム 直/近/遠:[[ getFloor(60*(1-getStatus("E").quick)) ]]/[[ getFloor(35*(1-getStatus("E").quick)) ]]/[[ getFloor(25*(1-getStatus("E").quick)) ]]</li>
-              　<li>各種ボム 遠:[[ getFloor(30*(1-getStatus("E").bomb)) ]]</li>
+              　<li>ジェットパック 近/遠:[[getFloor(50*(1-getStatus("E").special))]]/[[getFloor(30*(1-getStatus("E").special))]]</li>
+              　<li>クイックボム 直/近/遠:[[getFloor(60*(1-getStatus("E").quick))]]/[[getFloor(35*(1-getStatus("E").quick))]]/[[getFloor(25*(1-getStatus("E").quick))]]</li>
+              　<li>各種ボム 遠:[[getFloor(30*(1-getStatus("E").bomb))]]</li>
             </ul>
           </div>
         </div>
-        <div class="tile is-vertical is-parent">
-          <div class="tile box is-12 is-child">
+        <div class="ika tile is-vertical is-parent">
+          <div class="ika tile box is-12 is-child">
             <div>
               <div>メインブキインク効率 中量</div>
-                <div class="base"><div class="main_ink_buki_mid"></div></div>
+                <div class="ika base"><div class="main_ink_buki_mid"></div></div>
               <div>メインブキインク効率 重量</div>
-                <div class="base"><div class="main_ink_buki_high"></div></div>
+                <div class="ika base"><div class="main_ink_buki_high"></div></div>
               </div>
             </div>
-          <div class="tile box is-12 is-child">
+          <div class="ika tile box is-12 is-child">
             <div>サブブキインク効率
               <div>
                 <div v-for="(val, key) in getStatus('2')">
-                  [[ val.name+":"+val.ink+"%" ]]
-                  <div class="base">
-                    <div class="ink_buki_sub_base" v-bind:style="bombStyle(val,'gray','base')">
-                      <div class="ink_buki_sub" v-bind:style="bombStyle(val,'#3CB371','gp')">[[ getFloor(val.ratio*val.ink)+"%" ]]</div>
+                  [[val.name+":"+val.ink+"%"]]
+                  <div class="ika base">
+                    <div class="ika ink_buki_sub_base" v-bind:style="bombStyle(val,'gray','base')">
+                      <div class="ika ink_buki_sub" v-bind:style="bombStyle(val,'#3CB371','gp')">[[getFloor(val.ratio*val.ink)+"%"]]</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tile box is-12 is-child">
-            <div>スペシャル増加量(180p時に必要p)<div class="base">
-                <div class="special_ink">[[ getFloor(180/getStatus("7")) ]]/180</div>
+          <div class="ika tile box is-12 is-child">
+            <div>スペシャル増加量(180p時に必要p)<div class="ika base">
+                <div class="ika special_ink">[[getFloor(180/getStatus("7"))]]/180</div>
               </div>
             </div>
-            <div>スペシャル減少量(100%時)<div class="base">
-                <div class="special_ink_down">[[ getFloor(1-getStatus("8"))*100 ]]%</div>
+            <div>スペシャル減少量(100%時)<div class="ika base">
+                <div class="ika special_ink_down">[[getFloor(1-getStatus("8"))*100]]%</div>
               </div>
             </div>
           </div>
@@ -274,6 +252,5 @@
 
 </div>
 
+</div>
 <script src="/ika/main.js"></script>
-
-</html>
