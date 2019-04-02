@@ -329,7 +329,7 @@ ul, li {
   animation: count_up 1s linear infinite;
 }
 @keyframes progress_values {
-  0% {value:"0"},
+  0% {value:"0"}
   100% {value:"100"}
 }
 

@@ -221,12 +221,12 @@ buki = [
    },
 ];
 
-Vue.config.delimiters = ['[[', ']]'];
 var app = new Vue({
+  delimiters: ["[[","]]"],
   el: '#app',
   data: {
     version: 'v0.0.5.9',
-    base_url: "https://nanaaki.com/ika/?",
+    base_url: "https://ika.ninja/tool/calc/?",
     message: location.search,
     buki_list: buki,
     buki: buki[0],
@@ -253,11 +253,11 @@ var app = new Vue({
       50:function(gp){ return 50*(0.033*gp-0.00027*gp**2)}
     },
     gear: [
-            {code:'F', name:'-', image:'./img/F.png',
+            {code:'F', name:'-', image:'/ika/img/F.png',
              calc:function(gp){return gp}},
-            {code:'1', name:'メインインク性能', image:'./img/1.png',
+            {code:'1', name:'メインインク性能', image:'/ika/img/1.png',
              calc:function(gp){return {'mid' :1-0.45*(0.033*gp-0.00027*gp**2), 'high':1-0.5*(0.033*gp-0.00027*gp**2)**0.7369655942}} },
-            {code:'2', name:'サブインク性能', image:'./img/2.png',
+            {code:'2', name:'サブインク性能', image:'/ika/img/2.png',
              calc:function(gp){
                return {
                  'jb' : {'ink':75.0, 'ratio' : (1-0.4*(0.033*gp-0.00027*gp**2)), 'name':"ジャンプビーコン"},
@@ -271,66 +271,66 @@ var app = new Vue({
                }
              }
             },
-            {code:'3', name:'インク回復力', image:'./img/3.png',
+            {code:'3', name:'インク回復力', image:'/ika/img/3.png',
              calc: function(gp){ return {'hito':600-380*(0.033*gp-0.00027*gp**2), 'ika':180-63*(0.033*gp-0.00027*gp**2)}} },
-            {code:'4', name:'メイン性能', image:'./img/4.png',
+            {code:'4', name:'メイン性能', image:'/ika/img/4.png',
              calc: undefined },
-            {code:'5', name:'ヒト速', image:'./img/5.png',
+            {code:'5', name:'ヒト速', image:'/ika/img/5.png',
              calc:function(gp){ return {'light' : 1.04+0.4 *(0.033*gp-0.00027*gp**2),
                                        'middle' : 0.96+0.48*(0.033*gp-0.00027*gp**2),
                                        'heavy'  : 0.88+0.56*(0.033*gp-0.00027*gp**2)} }
             },
-            {code:'6', name:'イカ速', image:'./img/6.png',
+            {code:'6', name:'イカ速', image:'/ika/img/6.png',
              calc:function(gp){ return {'light' : 2.016+0.384*(0.033*gp-0.00027*gp**2),
                                        'middle' : 1.92 +0.48 *(0.033*gp-0.00027*gp**2),
                                        'heavy'  : 1.728+0.672*(0.033*gp-0.00027*gp**2)} }
             },
-            {code:'7', name:'スペシャル増加', image:'./img/7.png',
+            {code:'7', name:'スペシャル増加', image:'/ika/img/7.png',
              calc:function(gp){ return (1+((0.99 * gp)-(0.09*gp)**2)/100) }},
-            {code:'8', name:'スペシャル減少軽減', image:'./img/8.png',
+            {code:'8', name:'スペシャル減少軽減', image:'/ika/img/8.png',
              calc:function(gp){ return (50-50*((0.033*gp)-0.00027*gp**2)**(0.7369655942))/100 }},
-            {code:'9', name:'スペシャル性能', image:'./img/9.png',
+            {code:'9', name:'スペシャル性能', image:'/ika/img/9.png',
              calc: undefined },
-            {code:'A', name:'復活時間短縮', image:'./img/A.png',
+            {code:'A', name:'復活時間短縮', image:'/ika/img/A.png',
              calc: function(gp){ return 150+(90-60*(0.033*(gp)-0.00027*(gp)**2))+(270-180*(0.033*(gp)-0.00027*(gp)**2)) }},
-            {code:'B', name:'スーパージャンプ時間短縮', image:'./img/B.png',
+            {code:'B', name:'スーパージャンプ時間短縮', image:'/ika/img/B.png',
              calc: function(gp){ return　{
                'wait': 80-(60*(0.033*gp-0.00027*gp)**(0.4150374993)),
                'jump' : 138-41.4*(0.033*gp-0.00027*gp**2)**(2.860596943)} }
             },
-            {code:'C', name:'サブ性能', image:'./img/C.png',
+            {code:'C', name:'サブ性能', image:'/ika/img/C.png',
              calc: undefined },
-            {code:'D', name:'敵インク軽減', image:'./img/D.png',
+            {code:'D', name:'敵インク軽減', image:'/ika/img/D.png',
              calc: function(gp){ return {
                'slip': Math.floor((0.3-0.15*(0.033*gp-0.00027*gp**2))*10)/10,
                'cap' : 40-20*(0.033*gp-0.00027*gp**2),
                'no_damage' : (39*((0.033*gp-0.00027*gp**2)**0.5849625007)),
                'hito': 0.24+0.48*(0.033*gp-0.00027*gp**2)}}},
-            {code:'E', name:'爆風ダメージ軽減', image:'./img/E.png',
+            {code:'E', name:'爆風ダメージ軽減', image:'/ika/img/E.png',
              calc: function(gp){ return {
                'special' : ((0.033*gp-0.00027*gp**2)*35)/100,
                'quick' : ((0.033*gp-0.00027*gp**2)*40)/100,
                'bomb' : ((0.033*gp-0.00027*gp**2)*50)/100}
             }},
-            {code:'Q', name:'スタートダッシュ', image:'./img/Q.png',
+            {code:'Q', name:'スタートダッシュ', image:'/ika/img/Q.png',
              calc: function(){return {'5':30, '6':30, 'D':30}} },
-            {code:'R', name:'ラストスパート', image:'./img/R.png',
+            {code:'R', name:'ラストスパート', image:'/ika/img/R.png',
              calc: function(){return {'1':24, '2':24, '3':24}} },
-            {code:'S', name:'逆境強化', image:'./img/S.png',
+            {code:'S', name:'逆境強化', image:'/ika/img/S.png',
              calc: function(gp){ return 0.036 }},
-            {code:'T', name:'カムバック', image:'./img/T.png',
+            {code:'T', name:'カムバック', image:'/ika/img/T.png',
              calc: function(){return {'1':10, '2':10, '5': 10, '6':10, '7':10}} },
-            {code:'U', name:'イカ忍者', image:'./img/U.png',
+            {code:'U', name:'イカ忍者', image:'/ika/img/U.png',
              calc: undefined },
-            {code:'V', name:'リベンジ', image:'./img/V.png',
+            {code:'V', name:'リベンジ', image:'/ika/img/V.png',
              calc: undefined },
-            {code:'W', name:'復活ペナルティ', image:'./img/W.png',
+            {code:'W', name:'復活ペナルティ', image:'/ika/img/W.png',
              calc: undefined },
-            {code:'X', name:'ステルスジャンプ', image:'./img/X.png',
+            {code:'X', name:'ステルスジャンプ', image:'/ika/img/X.png',
              calc: undefined },
-            {code:'Y', name:'対物攻撃力アップ', image:'./img/Y.png',
+            {code:'Y', name:'対物攻撃力アップ', image:'/ika/img/Y.png',
              calc: function(gp){ return {'hoko':1.1, 'rail': 1.15, 'shield': 1.25, 'bubble': 1.3, 'armor': 3, 'beacon': 10} }},
-            {code:'Z', name:'受け身術', image:'./img/Z.png',
+            {code:'Z', name:'受け身術', image:'/ika/img/Z.png',
              calc: undefined }
           ]
   },
