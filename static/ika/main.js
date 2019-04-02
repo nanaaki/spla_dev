@@ -221,6 +221,7 @@ buki = [
    },
 ];
 
+Vue.config.delimiters = ['[[', ']]'];
 var app = new Vue({
   el: '#app',
   data: {
@@ -559,8 +560,9 @@ var app = new Vue({
     }
   }
 })
-Vue.config.delimiters = ['<%', '%>']
 window.onload = function(){
   app.message = app.convertName(location.search.substr(1));
-  app.importEqui(location.search.substr(1));
+  if(app.message){
+    app.importEqui(location.search.substr(1));
+  }
 }
