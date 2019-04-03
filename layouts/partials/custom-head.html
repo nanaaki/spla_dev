@@ -27,7 +27,7 @@ var gp_name = {
   'F':{'gp':0,'name':'空きGP'}
 };
 
-window.addEventListener("load", function(){
+window.addEventListener("DOMContentLoaded", function(){
   ogp_image_url += location.search.substr(1).split('-').slice(0,3).join('-') + "&v=0.02";
   var head_chi = document.head.children;
   var gear = location.search.substr(1).split('-').slice(0,3);
