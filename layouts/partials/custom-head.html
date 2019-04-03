@@ -28,7 +28,7 @@ var gp_name = {
 };
 
 window.addEventListener("load", function(){
-  ogp_image_url = location.search.substr(1).split('-').slice(0,3).join('-') + "&v=0.02";
+  ogp_image_url += location.search.substr(1).split('-').slice(0,3).join('-') + "&v=0.02";
   var head_chi = document.head.children;
   var gear = location.search.substr(1).split('-').slice(0,3);
   for(var i = 0;i < head_chi.length;i++){
