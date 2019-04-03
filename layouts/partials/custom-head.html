@@ -51,10 +51,10 @@ window.addEventListener("DOMContentLoaded", function(){
       var res = "";
       for(key in gp_name){
         if(gp_name[key]['gp'] != 0){
-          res += gp_name[key]['name'] + "=" + gp_name[key]['gp']
+          res += gp_name[key]['name'] + "=" + gp_name[key]['gp'] + "/"
         }
       }
-      head_chi[i].setAttribute('content', res);
+      head_chi[i].setAttribute('content', res.slice(0,-1));
     }
   }
 }, false);
