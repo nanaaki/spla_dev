@@ -51,6 +51,10 @@ window.onload = function() {
       for(var j = 0; j < 3; j++){
         gp_name[gear[0][j+1]]['gp']+=3;
         gp_name[gear[1][j+1]]['gp']+=3;
+        gp_name[gear[2][j+1]]['gp']+=3;
+      }
+      gp_name[gear[0][0]]['gp']+=10;
+      gp_name[gear[1][0]]['gp']+=10;
       gp_name[gear[2][0]]['gp']+=10;
       var res = "";
       for(key in gp_name){
@@ -61,8 +65,7 @@ window.onload = function() {
       head_chi[i].setAttribute('content', res);
       }
     }
-  }
-};
+  };
 </script>
 
 {{ template "_internal/google_analytics_async.html" . }}

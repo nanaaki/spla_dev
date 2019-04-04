@@ -566,4 +566,4 @@ document.addEventListener('load', function(){
   if(app.message){
     app.importEqui(location.search.substr(1));
   }
-}, False);
+}, false);
