@@ -561,8 +561,9 @@ var app = new Vue({
   }
 })
 
-document.addEventListener('load', function(){
+window.addEventListener('load', function(){
   app.message = app.convertName(location.search.substr(1));
+  console.log("hogehoge");
   if(app.message){
     app.importEqui(location.search.substr(1));
   }

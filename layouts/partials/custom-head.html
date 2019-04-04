@@ -41,7 +41,6 @@ window.onload = function() {
   var gear = location.search.substr(1).split('-').slice(0,3);
   for(var i = 0;i < head_chi.length;i++){
     var proper = head_chi[i].getAttribute('name');
-    console.log(head_chi[i]);
     if(proper === 'twitter:image'){
       head_chi[i].setAttribute('content',ogp_image_url);
     }
