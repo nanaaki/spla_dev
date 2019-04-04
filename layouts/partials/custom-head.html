@@ -1,4 +1,9 @@
 <script src="/ika/vue.js"></script>
 <meta content="{{ .Description }}" property="og:description">
 <meta content="{{ delimit .Keywords ", " }}" name="keywords">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" :content=exportEqui />
+<meta name="twitter:title" content="スプラトゥーン2ギアパワー計算機" />
+<meta name="twitter:description" :content=exportGps />
+<meta name="twitter:image" :content=exportTweetCard />
 {{ template "_internal/google_analytics_async.html" . }}
