@@ -29,12 +29,12 @@ buki = [
      auto:function(gp){ return 1+0.2*(0.033*gp-0.00027*gp**2)} }}
    },
    {type:'light',
-    name:'プライムシューター',
+    name:'プライムシューター(ver4.6.0仮対応誤差あるかも)',
     code:'prim',
     bomb:'point',
     spec:{damage:42, frame:8, range:3.1, charge_time:0, move:0, ink:2},
     special:{point:170, id:'rain'},
-    main_spec_up:{type:'damage', calc:function(gp){ return 1+0.25*(0.033*gp-0.00027*gp**2) }}
+    main_spec_up:{type:'damage', calc:function(gp){ return 1+0.215*(0.033*gp-0.00027*gp**2) }}
    },
    {type:'light',
     code:'lree',
