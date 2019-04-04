@@ -560,9 +560,10 @@ var app = new Vue({
     }
   }
 })
-window.onload = function(){
+
+document.addEventListener('load', function(){
   app.message = app.convertName(location.search.substr(1));
   if(app.message){
     app.importEqui(location.search.substr(1));
   }
-}
+}, False);

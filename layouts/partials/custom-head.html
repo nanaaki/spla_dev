@@ -34,12 +34,13 @@ var gp_name = {
   'F':{'gp':0,'name':'空きGP'}
 };
 
-window.onload = function(){
+window.onload = function() {
   ogp_image_url += location.search.substr(1).split('-').slice(0,3).join('-') + "&v=0.02";
   var head_chi = document.head.children;
   var gear = location.search.substr(1).split('-').slice(0,3);
   for(var i = 0;i < head_chi.length;i++){
     var proper = head_chi[i].getAttribute('name');
+    console.log(head_chi[i]);
     if(proper === 'twitter:image'){
       head_chi[i].setAttribute('content',ogp_image_url);
     }
@@ -61,6 +62,6 @@ window.onload = function(){
       }
     }
   }
-});
+};
 </script>
 {{ template "_internal/google_analytics_async.html" . }}
