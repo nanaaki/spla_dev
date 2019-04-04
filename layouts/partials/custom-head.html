@@ -1,3 +1,10 @@
+<meta content="{{ .Description }}" property="og:description">
+<meta content="{{ delimit .Keywords ", " }}" name="keywords">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="placeholder" />
+<meta name="twitter:title" content="スプラトゥーン2ギアパワー計算機" />
+<meta name="twitter:description" content="placeholder" />
+<meta name="twitter:image" content="placeholder" />
 <script>
 var ogp_image_url = "https://us-central1-nanadon-213503.cloudfunctions.net/generate_gps_image?g=";
 var gp_name = {
@@ -27,7 +34,7 @@ var gp_name = {
   'F':{'gp':0,'name':'空きGP'}
 };
 
-window.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("load", function(){
   ogp_image_url += location.search.substr(1).split('-').slice(0,3).join('-') + "&v=0.02";
   var head_chi = document.head.children;
   var gear = location.search.substr(1).split('-').slice(0,3);
@@ -56,12 +63,4 @@ window.addEventListener("DOMContentLoaded", function(){
   }
 });
 </script>
-<script src="/ika/vue.js"></script>
-<meta content="{{ .Description }}" property="og:description">
-<meta content="{{ delimit .Keywords ", " }}" name="keywords">
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:url" content="" />
-<meta name="twitter:title" content="スプラトゥーン2ギアパワー計算機" />
-<meta name="twitter:description" content="" />
-<meta name="twitter:image" content="" />
 {{ template "_internal/google_analytics_async.html" . }}
