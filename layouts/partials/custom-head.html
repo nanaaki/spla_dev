@@ -1,5 +1,6 @@
 <meta content="{{ .Description }}" property="og:description">
 <meta content="{{ delimit .Keywords ", " }}" name="keywords">
+{{if eq .Title "ギアパワー計算機" }}
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:url" content="placeholder" />
 <meta name="twitter:title" content="スプラトゥーン2ギアパワー計算機" />
@@ -67,5 +68,5 @@ window.onload = function() {
     }
   };
 </script>
-
+{{ end }}
 {{ template "_internal/google_analytics_async.html" . }}
