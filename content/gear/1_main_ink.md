@@ -1,6 +1,8 @@
 ---
-title: "メインインク効率アップ"
+title: "インク効率アップ(メイン)"
 date: 2019-02-19T00:41:14+09:00
+description: "スプラトゥーン2 インク性能アップ(メイン)の効果"
+keywords: ["splatoon2", "スプラトゥーン2", "ギアパワー", "ギア", "効果", "グラフ", "メイン", "インク性能アップ"]
 draft: flase
 weght: 10
 ---
@@ -36,4 +38,3 @@ weght: 10
 現状データとか集まってるグラフ化できている値は以下のグラフが全て。左上の武器名で絞り込みから好きなブキに絞り込んで確認可能。(一覧に無いブキは今後がんばって追加します・・・。
 
 <iframe width="800" height="450" src="https://datastudio.google.com/embed/reporting/14V2ptJLY-QAE-PObM2r7bVPh0OkdzAU2/page/M7Ol" frameborder="0" style="border:0" allowfullscreen></iframe>
-
