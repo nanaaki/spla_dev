@@ -5,10 +5,19 @@ description = "splatoon2"
 
 ### Splatoon2のデータまとめです。
 
-  - ギアパワー(ギアパワー一覧&効果の式などの解説)
-  - ブキ(ブキのデータ一覧 仮)
-  - マップ(マップの距離感や通過可能ルートについてまとめたい 仮)
-  - ガチマッチの仕様(細かいシステム面の解説、勝ち方ではない 仮)
-  - 豆知識&メモ(システムについての豆知識とメモ 仮)
-  - ツール
-    - ギアパワー計算機(ギアパワーの項目で説明している値に基づいて効果の可視化がされます)
+- [ツール](https://ika.ninja/tool/)
+  - [ギアパワー計算機](https://ika.ninja/tool/calc/)(ギアパワーの項目で説明している値に基づいて効果の可視化がされます)
+- [ギアパワー](https://ika.ninja/gear/)(ギアパワー一覧&効果の式などの解説)
+  - [インク効率アップ(メイン)](https://ika.ninja/gear/1_main_ink/)
+  - [インク効率アップ(サブ)](https://ika.ninja/gear/2_sub_ink/)
+  - [インク回復力アップ](https://ika.ninja/gear/3_rec_ink/)
+  - [イカダッシュ速度アップ](https://ika.ninja/gear/4_ika_speed/)
+  - [ヒト移動速度アップ](https://ika.ninja/gear/5_hito_speed/)
+  - [スペシャル増加アップ減少ダウン](https://ika.ninja/gear/6_special_up_down/)
+  - [スーパージャンプ時間短縮](https://ika.ninja/gear/7_super_jump/)
+  - [復活時間短縮](https://ika.ninja/gear/8_revi_time/)
+  - [相手インク影響軽減](https://ika.ninja/gear/9_aite_ink/)
+- ブキ(ブキのデータ一覧 仮)
+- マップ(マップの距離感や通過可能ルートについてまとめたい 仮)
+- ガチマッチの仕様(細かいシステム面の解説、勝ち方ではない 仮)
+- 豆知識&メモ(システムについての豆知識とメモ 仮)
