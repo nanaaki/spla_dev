@@ -1,8 +1,9 @@
 +++
 title = "ギアパワー"
-description = "splatoon2"
 weight = 10
 alwaysopen = true
+description = "スプラトゥーン2 ギアパワーの効果などまとめ"
+keywords = ["splatoon2", "スプラトゥーン2", "ギアパワー", "ギア", "効果", "グラフ", "メインインク効率アップ", "イカ速", "ヒト速", "安全靴", "スパ短", "復活時間短縮", "スペ増", "スペ減"]
 +++
 
 - [インク効率アップ(メイン)](https://ika.ninja/gear/1_main_ink/)
