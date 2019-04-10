@@ -27,6 +27,12 @@ ver 4.6.0の記載内容は以下
 
 リッター4kスコープを持ってメイン性能アップGP33(これでおおよそレティクル反応距離が練習ライン7本分になる)でAに撃ち抜いてもらう。Bは各GP値の相手インク影響軽減をつけて撃ち抜かれた位置に戻りその上を歩いていく。あとは適当に割り算すればいい。
 
+#### 検証動画
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Mi-hvfNmzCU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### 数値まとめ
+
 とりあえず実測値とver4.5.1とver4.6.0の予測式による練習ライン1本分移動するために必要なフレーム数値それぞれ。
 
 |GP |実測値 ver 4.6.0|ver 4.5.1|予測値 ver 4.6.0|
