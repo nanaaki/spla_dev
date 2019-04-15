@@ -7,7 +7,7 @@ theme = "docdock"
 #themesdir = "../.."
 pygmentsCodeFences = true
 pygmentsStyle = "monokailight"
-
+enableRobotsTXT = true
 defaultContentLanguage = "ja"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
