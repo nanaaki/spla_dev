@@ -225,7 +225,7 @@ var app = new Vue({
   delimiters: ["[[","]]"],
   el: '#app',
   data: {
-    version: 'v0.0.5.9',
+    version: 'v0.0.6.0',
     base_url: "https://ika.ninja/tool/calc/?",
     message: location.search,
     buki_list: buki,
@@ -305,7 +305,7 @@ var app = new Vue({
                'slip': Math.floor((0.3-0.15*(0.033*gp-0.00027*gp**2))*10)/10,
                'cap' : 40-20*(0.033*gp-0.00027*gp**2),
                'no_damage' : (39*((0.033*gp-0.00027*gp**2)**0.5849625007)),
-               'hito': 0.24+0.48*(0.033*gp-0.00027*gp**2)}}},
+               'hito': 0.24+0.60*(0.033*gp-0.00027*gp**2)}}},
             {code:'E', name:'爆風ダメージ軽減', image:'/ika/img/E.png',
              calc: function(gp){ return {
                'special' : ((0.033*gp-0.00027*gp**2)*35)/100,
