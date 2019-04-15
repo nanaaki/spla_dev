@@ -38,7 +38,6 @@ var gp_name = {
 window.onload = function() {
   ogp_image_url += location.search.substr(1).split('-').slice(0,3).join('-') + "&v=0.02";
   let head_chi = document.head.children;
-  let ogp_gear = location.search.substr(1).split('-').slice(0,3);
   for(var i = 0;i < head_chi.length;i++){
     var proper = head_chi[i].getAttribute('name');
     if(proper === 'twitter:image'){
@@ -48,6 +47,7 @@ window.onload = function() {
       head_chi[i].setAttribute('content', location.href);
     }
     if(proper === 'twitter:description'){
+      let ogp_gear = location.search.substr(1).split('-').slice(0,3);
       for(var j = 0; j < 3; j++){
         gp_name[ogp_gear[0][j+1]]['gp']+=3;
         gp_name[ogp_gear[1][j+1]]['gp']+=3;
