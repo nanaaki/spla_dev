@@ -48,14 +48,14 @@ window.onload = function() {
     }
     if(proper === 'twitter:description'){
       let ogp_gear = location.search.substr(1).split('-').slice(0,3);
+      gp_name[ogp_gear[0][0]]['gp']+=10;
+      gp_name[ogp_gear[1][0]]['gp']+=10;
+      gp_name[ogp_gear[2][0]]['gp']+=10;
       for(var j = 0; j < 3; j++){
         gp_name[ogp_gear[0][j+1]]['gp']+=3;
         gp_name[ogp_gear[1][j+1]]['gp']+=3;
         gp_name[ogp_gear[2][j+1]]['gp']+=3;
       }
-      gp_name[ogp_gear[0][0]]['gp']+=10;
-      gp_name[ogp_gear[1][0]]['gp']+=10;
-      gp_name[ogp_gear[2][0]]['gp']+=10;
       var res = "";
       for(key in gp_name){
         if(gp_name[key]['gp'] != 0){
