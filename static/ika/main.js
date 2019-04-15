@@ -231,6 +231,7 @@ var app = new Vue({
     buki_list: buki,
     buki: buki[0],
     boost: {on:false, boost_gps: {}, name:""},
+    boost_leg: {on:false, boost_gps: {}, name:""},
     equi:{
       head:{main:{code:'F', name:'-'},sub:[{code:'F', name:'-'},{code:'F', name:'-'},{code:'F', name:'-'}]},
       body:{main:{code:'F', name:'-'},sub:[{code:'F', name:'-'},{code:'F', name:'-'},{code:'F', name:'-'}]},
@@ -331,7 +332,7 @@ var app = new Vue({
             {code:'Y', name:'対物攻撃力アップ', image:'/ika/img/Y.png',
              calc: function(gp){ return {'hoko':1.1, 'rail': 1.15, 'shield': 1.25, 'bubble': 1.3, 'armor': 3, 'beacon': 10} }},
             {code:'Z', name:'受け身術', image:'/ika/img/Z.png',
-             calc: undefined }
+             calc: function(){return {'5':30, '6':30, 'D':30}} }
           ]
   },
   computed: {
@@ -403,6 +404,15 @@ var app = new Vue({
           this.boost.name = "";
           this.boost.on = false;
         }
+        if(val.leg.main.code == 'Z'){
+          this.boost_leg.boost_gps = val.leg.main.calc();
+          this.boost_leg.name = val.leg.main.name;
+          this.boost_leg.on = false
+        }else{
+          this.boost_leg.boost_gps = {};
+          this.boost_leg.name = "";
+          this.boost_leg.on = false;
+        }
         tmp[val.head.main.code] ? tmp[val.head.main.code] += 10 : tmp[val.head.main.code] = 10;
         tmp[val.body.main.code] ? tmp[val.body.main.code] += 10 : tmp[val.body.main.code] = 10;
         tmp[val.leg.main.code]  ? tmp[val.leg.main.code]  += 10 : tmp[val.leg.main.code]  = 10;
@@ -422,6 +432,37 @@ var app = new Vue({
       },
       deep: true
     },
+    boost_leg: {
+      handler: function(val,old){
+        if(val.name != "" && val.on){
+          var tt = this;
+          Object.keys(val.boost_gps).forEach(function(key){
+            tt.$set(tt.gps, key, tt.boost_leg.boost_gps[key]+(tt.gps[key] ? tt.gps[key] : 0));
+          });
+        }
+        if(val.name == "" || val.on == false){
+          this.gps = {};
+          var tmp = {};
+          tmp[this.equi.head.main.code] ? tmp[this.equi.head.main.code] += 10 : tmp[this.equi.head.main.code] = 10;
+          tmp[this.equi.body.main.code] ? tmp[this.equi.body.main.code] += 10 : tmp[this.equi.body.main.code] = 10;
+          tmp[this.equi.leg.main.code]  ? tmp[this.equi.leg.main.code]  += 10 : tmp[this.equi.leg.main.code]  = 10;
+          this.equi.head.sub.map(function(sub_val){
+            tmp[sub_val.code] ? tmp[sub_val.code] += 3 : tmp[sub_val.code] = 3;
+          });
+          this.equi.body.sub.map(function(sub_val){
+            tmp[sub_val.code] ? tmp[sub_val.code] += 3 : tmp[sub_val.code] = 3;
+          });
+          this.equi.leg.sub.map(function(sub_val){
+            tmp[sub_val.code] ? tmp[sub_val.code] += 3 : tmp[sub_val.code] = 3;
+          });
+          var tt = this;
+          Object.keys(tmp).forEach(function(key){
+            tt.$set(tt.gps, (key ? key : 'F'), tmp[key]);
+          });
+        }
+      },
+      deep: true
+    },
     boost: {
       handler: function(val,old){
         if(val.name != "" && val.on){
@@ -433,15 +474,6 @@ var app = new Vue({
         if(val.name == "" || val.on == false){
           this.gps = {};
           var tmp = {};
-          if(this.equi.head.main.code == 'Q' || this.equi.head.main.code == 'R' || this.equi.head.main.code == 'T' ){
-            //this.boost.boost_gps = this.equi.head.main.calc();
-            //this.boost.name = this.equi.head.main.name;
-            //this.boost.on = false;
-          }else{
-            //this.boost.boost_gps = {};
-            //this.boost.name = "";
-            //this.boost.on = false;
-          }
           tmp[this.equi.head.main.code] ? tmp[this.equi.head.main.code] += 10 : tmp[this.equi.head.main.code] = 10;
           tmp[this.equi.body.main.code] ? tmp[this.equi.body.main.code] += 10 : tmp[this.equi.body.main.code] = 10;
           tmp[this.equi.leg.main.code]  ? tmp[this.equi.leg.main.code]  += 10 : tmp[this.equi.leg.main.code]  = 10;
@@ -563,7 +595,6 @@ var app = new Vue({
 
 window.addEventListener('load', function(){
   app.message = app.convertName(location.search.substr(1));
-  console.log("hogehoge");
   if(app.message){
     app.importEqui(location.search.substr(1));
   }

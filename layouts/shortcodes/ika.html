@@ -113,14 +113,40 @@
                 </li>
               </ul>
             </div>
-
+            <div v-if="boost.name!='' || boost_leg.name!=''">
+              <p>条件発動ギア クリックで切替</p>
+            </div>
             <div v-if="boost.name!=''">
-              <button v-if="boost.on" v-on:click="boost.on=false">[[boost.name]]有効</button>
-              <button v-else v-on:click="boost.on=true">[[boost.name]]無効</button>
+              [[boost.name]]
+              <div v-if="boost.on" v-on:click="boost.on=false" class="buttons has-addons">
+                <span class="button is-success is-selected">有効</span>
+                <span class="button">無効</span>
+              </div>
+              <div v-else v-on:click="boost.on=true" v-on:click="boost.on=false" class="buttons has-addons">
+                <span class="button">有効</span>
+                <span class="button is-success is-selected">無効</span>
+              </div>
+            </div>
+            <div v-if="boost_leg.name!=''">
+              [[boost_leg.name]]
+              <div v-if="boost_leg.on" v-on:click="boost_leg.on=false" class="buttons has-addons">
+                <span class="button is-success is-selected">有効</span>
+                <span class="button">無効</span>
+              </div>
+              <div v-else v-on:click="boost_leg.on=true" v-on:click="boost_leg.on=false" class="buttons has-addons">
+                <span class="button">有効</span>
+                <span class="button is-success is-selected">無効</span>
+              </div>
             </div>
           </div>
           <div class="ika tile is-12 is-child box">
             <p class="ika subtitle">ギアパワー振り分け/ブキスペック</p>
+            <div v-if="boost.name!=''">
+              <p v-if="boost.on">[[boost.name]]有効状態</p>
+            </div>
+            <div v-if="boost_leg.name!=''">
+              <p v-if="boost_leg.on">[[boost_leg.name]]有効状態</p>
+            </div>
             <div>
               <ul><li v-for="dg in view_spec(buki, gps['4'] ? gps['4'] : 0)">[[dg]]</li>
             </div>
