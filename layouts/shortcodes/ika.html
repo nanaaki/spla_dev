@@ -188,7 +188,8 @@
                   <div class=jump_count></div>
                 </div>
               </div>
-              <div>復活時間+スパジャン合計::[[getFloor(getStatus("A")/60) + getFloor(getStatus("B").wait/60) + getFloor(getStatus("B").jump/60) ]]</div>
+              <div>復活時間+スパジャン合計:[[getFloor(getStatus("A")/60 + getStatus("B").wait/60 + getStatus("B").jump/60) ]]</div>
+              <div>復活時間未適応時+スパジャン合計:[[getFloor(8.5 + getStatus("B").wait/60 + getStatus("B").jump/60) ]]</div>
             </div>
           </div>
           <div class="ika tile box is-12 is-child">
